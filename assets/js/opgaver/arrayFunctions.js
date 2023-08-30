@@ -9,11 +9,13 @@ let myPartArray = ['partElement1', 'partElement2', 'PartElement3'];
 // opgave 1 tilføj element4 til enden myArray
 
 // din kode her...
+myArray.push('element4')
 console.log(myArray);
 
 // opgave 1 fjern element4 igen
-
+myArray.pop();
 // din kode her...
+
 console.log(myArray);
 
 //.........................................................
@@ -21,11 +23,12 @@ console.log(myArray);
 // opgave 2 tilføj element4 til starten myArray
 
 // din kode her...
+myArray.unshift('element4')
 console.log(myArray);
 
 // opgave 2 fjern element4 igen
-
 // din kode her...
+myArray.shift();
 console.log(myArray);
 
 //.........................................................
@@ -58,7 +61,7 @@ træk blomkål og spidskål ud af arrayen myVegetables
 og ind i en ny array der hedder myCabbage*/
 
 // din kode her...
-
+let myCabbage = myVegetables.slice(1, 3);
 
 
 console.log(myCabbage);
@@ -70,6 +73,7 @@ console.log(myCabbage);
 
 
 // din kode her...
+let myYummies = myFruits.concat(myVegetables);
 
 
 
@@ -83,7 +87,7 @@ console.log(myYummies);
 
 
 // din kode her...
-
+myYummies.sort()
 
 
 console.log(myYummies);
@@ -94,7 +98,7 @@ console.log(myYummies);
 
 
 // din kode her...
-
+myYummies.reverse();
 console.log(myYummies);
 
 //.........................................................
@@ -107,6 +111,13 @@ console.log(myYummies);
 let myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // din kode her...
+let myNextNumbers = myNumbers.map((x) => {
+    return x+7;
+});
+
+let myLastNumbers = myNextNumbers.map((x) => {
+    return x*12;
+});
 console.log(myNextNumbers);
 console.log(myLastNumbers);
 
@@ -116,7 +127,13 @@ skriv en kode der kan give os en ny array, udfra myNames, hvor navnet keld ikke 
 */
 let myNames = ['keld', 'søren', 'jens', 'tine', 'keld', 'ib', 'lene', 'keld', 'frederikke', 'line', 'kurt'];
 
+let myNewNames = myNames.filter(ifNotKeld)
 
+function ifNotKeld(navn)  {
+    return navn !== 'keld';
+}
+
+console.log(myNewNames);
 //.........................................................
 
 

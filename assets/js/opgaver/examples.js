@@ -2,27 +2,20 @@ let myExtras = [];
 const myExtrasInput = document.getElementById('extraUdstyr');
 const myExtrasListElement = document.getElementById('extraList');
 
-
 myExtrasInput.addEventListener("change", addExtra);
 
-
-
 function addExtra() {
-    /* din map kode her... */
+    const selectedExtra = myExtrasInput.value;
+    if (selectedExtra && !myExtras.includes(selectedExtra)) {
+        myExtras.push(selectedExtra);
+        updateExtras();
+    }
 }
-
-
 
 function updateExtras() {
-
-
-
-
-    /* din map kode her... */
-
-
+    const extrasHTML = myExtras.map(extra => `<p>${extra}</p>`).join('');
+    myExtrasListElement.innerHTML = extrasHTML;
 }
-
 
 
 
